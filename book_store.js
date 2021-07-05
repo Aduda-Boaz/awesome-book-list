@@ -10,7 +10,8 @@ function addBook(e) {
         bookTitle, 
         author,
      }
-     console.log(book);
+     this.reset();
+     books.push(book);
  }
 
 title.addEventListener('submit', addBook);
