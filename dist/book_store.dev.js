@@ -27,10 +27,15 @@ var popHtml = function popHtml() {
     books = [];
   } else {
     books.forEach(function (element) {
-      listB.innerHTML += "  <li class=\"book-title\">".concat(element.bookTitle, "</li>\n         <li class=\"book-author\">").concat(element.author, "</li>\n         <button id=\"btn-remove\">Remove</button>");
+      listB.innerHTML += "  <li class=\"book-title\">".concat(element.bookTitle, "</li>\n         <li class=\"book-author\">").concat(element.author, "</li>\n         <button id=\"btn-remove\" onclick=\"remove()\">Remove</button>");
     });
   }
 };
+
+function remove() {
+  var ul = document.getElementById('book-list');
+  ul.parentNode.removeChild(ul);
+}
 
 title.addEventListener('submit', addBook);
 document.addEventListener('DOMContentLoaded', popHtml);
