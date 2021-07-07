@@ -34,7 +34,6 @@ function addBook(e) {
    }
 
  }
-
  
  
  title.addEventListener('submit', addBook);
