@@ -8,15 +8,16 @@ books = JSON.parse(localStorage.getItem('Libros'));
 
  if (books === null){
     books = [];
- }else{
+ } else {
     books.forEach(element => {
        listB.innerHTML += `  <li class="book-title">${element.bookTitle}</li>
        <li class="book-author">${element.author}</li>
        <button id="btn-remove" onclick="remove()">Remove</button>`
     });
  }
-
 }
+
+document.addEventListener('DOMContentLoaded', popHtml);
 
 function addBook(e) {
   e.preventDefault();
@@ -38,4 +39,4 @@ function remove() {
 };
 
 title.addEventListener('submit', addBook);
-document.addEventListener('DOMContentLoaded', popHtml);
+
