@@ -27,7 +27,6 @@ Book library with vanilla javascript.
 ## Getting Started
 
 * You will not need additional instructions on installing Prerequisites.
-* In case you have node_modules on your folder Add them to .gitignore file before you a push.
 
 ### Prerequisites
 
@@ -57,7 +56,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-License Free.
+MIT License
 <!-- Distributed under the MIT License. See `LICENSE` for more information. -->
 
 <!-- ACKNOWLEDGEMENTS -->
