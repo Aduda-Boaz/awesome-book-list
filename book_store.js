@@ -2,7 +2,6 @@ const title = document.querySelector('.Book');
 const listB = document.getElementById('book-list');
 let books = [];
 
-
 function addBook(e) {
    e.preventDefault();
    const bookTitle = (this.querySelector('[name=book]')).value;
