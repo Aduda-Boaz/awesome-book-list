@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const title = document.querySelector('.Book');
 const listB = document.getElementById('book-list');
 let books = [];
@@ -12,8 +13,8 @@ const popHtml = () => {
     books.forEach((element) => {
       listB.innerHTML += `  <li class="book-title">${element.bookTitle}</li>
       <li class="book-author">${element.author}</li>
-      <button id="btn-remove" onclick="remove()">Remove</button>`
-   });
+      <button id="btn-remove" onclick="remove()">Remove</button>`;
+    });
   }
 };
 
@@ -24,8 +25,8 @@ function addBook(e) {
   const bookTitle = (this.querySelector('[name=book]')).value;
   const author = (this.querySelector('[name=auth]')).value;
   const book = {
-   bookTitle,
-   author,
+    bookTitle,
+    author,
   };
   this.reset();
   books.push(book);
