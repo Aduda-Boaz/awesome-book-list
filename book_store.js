@@ -29,14 +29,17 @@ function addBook(e) {
       books.forEach(element => {
          listB.innerHTML += `  <li class="book-title">${element.bookTitle}</li>
          <li class="book-author">${element.author}</li>
-         <button id="btn-remove">Remove</button>`
+         <button id="btn-remove" onclick="remove()">Remove</button>`
       });
    }
 
  }
 
- 
- 
+ function remove() {
+    let ul = document.getElementById('book-list');
+    ul.parentNode.removeChild(ul);
+ }
+
  title.addEventListener('submit', addBook);
  document.addEventListener('DOMContentLoaded', popHtml);
     
