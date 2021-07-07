@@ -10,12 +10,12 @@ const popHtml = () => {
     books = [];
   } else {
     books.forEach((element) => {
-       listB.innerHTML += `  <li class="book-title">${element.bookTitle}</li>
-       <li class="book-author">${element.author}</li>
-       <button id="btn-remove" onclick="remove()">Remove</button>`
-    });
- }
-}
+      listB.innerHTML += `  <li class="book-title">${element.bookTitle}</li>
+      <li class="book-author">${element.author}</li>
+      <button id="btn-remove" onclick="remove()">Remove</button>`
+   });
+  }
+};
 
 document.addEventListener('DOMContentLoaded', popHtml);
 
@@ -26,17 +26,16 @@ function addBook(e) {
   const book = {
    bookTitle,
    author,
-   };
+  };
   this.reset();
   books.push(book);
   localStorage.setItem('Libros', JSON.stringify(books));
   popHtml();
- };
+}
 
 function remove() {
   const ul = document.getElementById('book-list');
   ul.parentNode.removeChild(ul);
-};
+}
 
 title.addEventListener('submit', addBook);
-
