@@ -19,6 +19,8 @@ function addBook(e) {
   popHtml();
 }
 
+;
+
 var popHtml = function popHtml() {
   listB.innerHTML = '';
   books = JSON.parse(localStorage.getItem('Libros'));
@@ -27,7 +29,7 @@ var popHtml = function popHtml() {
     books = [];
   } else {
     books.forEach(function (element) {
-      listB.innerHTML += "  <li class=\"book-title\">".concat(element.bookTitle, "</li>\n         <li class=\"book-author\">").concat(element.author, "</li>\n         <button id=\"btn-remove\" onclick=\"remove()\">Remove</button>");
+      listB.innerHTML += "  <li class=\"book-title\">".concat(element.bookTitle, "</li>\n      <li class=\"book-author\">").concat(element.author, "</li>\n      <button id=\"btn-remove\" onclick=\"remove()\">Remove</button>");
     });
   }
 };
@@ -37,5 +39,6 @@ function remove() {
   ul.parentNode.removeChild(ul);
 }
 
+;
 title.addEventListener('submit', addBook);
 document.addEventListener('DOMContentLoaded', popHtml);
