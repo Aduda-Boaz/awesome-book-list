@@ -3,13 +3,13 @@ const listB = document.getElementById('book-list');
 let books = [];
 
 const popHtml = () => {
-listB.innerHTML = '';
-books = JSON.parse(localStorage.getItem('Libros'));
+  listB.innerHTML = '';
+  books = JSON.parse(localStorage.getItem('Libros'));
 
- if (books === null){
+  if (books === null) {
     books = [];
- } else {
-    books.forEach(element => {
+  } else {
+    books.forEach((element) => {
        listB.innerHTML += `  <li class="book-title">${element.bookTitle}</li>
        <li class="book-author">${element.author}</li>
        <button id="btn-remove" onclick="remove()">Remove</button>`
