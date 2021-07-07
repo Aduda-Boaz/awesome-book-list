@@ -1,6 +1,8 @@
 const title = document.querySelector('.Book');
 const author = document.querySelector('.Book');
-const books = [];
+const listB = document.getElementById('book-list');
+let books = [];
+
 
 function addBook(e) {
      e.preventDefault();
@@ -12,12 +14,32 @@ function addBook(e) {
      }
      this.reset();
      books.push(book);
+     localStorage.setItem('Libros', JSON.stringify(books));
+     popHtml();
  }
 
-title.addEventListener('submit', addBook);
-   
+
+ const popHtml = () => {
+   listB.innerHTML = '';
+   books = JSON.parse(localStorage.getItem('Libros'));
+
+   if (books === null){
+      books = [];
+   }else{
+      books.forEach(element => {
+         listB.innerHTML += `  <li class="book-title">${element.bookTitle}</li>
+         <li class="book-author">${element.author}</li>
+         <button id="btn-remove">Remove</button>`
+      });
+   }
+
+ }
+
+ 
+ 
+ title.addEventListener('submit', addBook);
+ document.addEventListener('DOMContentLoaded', popHtml);
     
-   
 
     
   
