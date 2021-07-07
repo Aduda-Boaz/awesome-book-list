@@ -1,25 +1,23 @@
 const title = document.querySelector('.Book');
-const author = document.querySelector('.Book');
 const listB = document.getElementById('book-list');
 let books = [];
 
 
 function addBook(e) {
-     e.preventDefault();
-     const bookTitle = (this.querySelector('[name=book]')).value;
-     const author = (this.querySelector('[name=auth]')).value;
-     const book = {
-        bookTitle, 
-        author,
+   e.preventDefault();
+   const bookTitle = (this.querySelector('[name=book]')).value;
+   const author = (this.querySelector('[name=auth]')).value;
+   const book = {
+      bookTitle, 
+      author,
      }
-     this.reset();
-     books.push(book);
-     localStorage.setItem('Libros', JSON.stringify(books));
-     popHtml();
- }
+   this.reset();
+   books.push(book);
+   localStorage.setItem('Libros', JSON.stringify(books));
+   popHtml();
+ };
 
-
- const popHtml = () => {
+const popHtml = () => {
    listB.innerHTML = '';
    books = JSON.parse(localStorage.getItem('Libros'));
 
