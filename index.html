@@ -10,17 +10,17 @@
 
   <body>
     <h1 class="heading">Awesome Books</h1>
-    <ul id="book-list"></ul>
+    <section id="book-list" class="list"></section>
 
     <div class="text_input">
       <div class="container">
-        <form class="Book">
+        <form class="Book" id="form-input">
           <div>
             <label for="Title">Title</label>
             <input
               type="text"
               name="book"
-              id="Title"
+              id="title"
               class="title"
               minlength="2"
               required
@@ -31,7 +31,7 @@
             <input
               type="text"
               name="auth"
-              id="Author"
+              id="author"
               class="author"
               minlength="2"
               required
