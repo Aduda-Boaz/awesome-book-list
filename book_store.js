@@ -12,7 +12,7 @@ const popHtml = () => {
   if (books === null) {
     books = [];
   } else {
-    for (let e = 0; e < books.length; e +=1) {
+    for (let e = 0; e < books.length; e += 1) {
       listB.innerHTML += `  <li class="book-title">${books[e].bookTitle}</li>
       <li class="book-author">${books[e].author}</li>
       <button id="btn-remove" onclick="remove(${e})">Remove</button>`;
@@ -37,10 +37,9 @@ function addBook(e) {
 }
 
 function remove(e) {
-  books.splice(e,1);
+  books.splice(e, 1);
   localStorage.setItem('Libros', JSON.stringify(books));
   popHtml();
 }
-
 
 title.addEventListener('submit', addBook);
