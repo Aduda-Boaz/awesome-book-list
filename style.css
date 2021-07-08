@@ -1,3 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+  margin-top: 20px;
+  font-size: 35px;
+  color: crimson;
+  text-align: center;
+}
+
+.text_input {
+  text-align: center;
+}
+
 .book {
   border: black solid 1px;
 }
