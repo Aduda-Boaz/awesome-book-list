@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 const title = document.querySelector('.Book');
+const author = document.querySelector('.Book');
 const listB = document.getElementById('book-list');
+const button = document.getElementById('btn');
 let books = [];
 
 const popHtml = () => {
@@ -10,11 +12,11 @@ const popHtml = () => {
   if (books === null) {
     books = [];
   } else {
-    books.forEach((element) => {
-      listB.innerHTML += `  <li class="book-title">${element.bookTitle}</li>
-      <li class="book-author">${element.author}</li>
-      <button id="btn-remove" onclick="remove()">Remove</button>`;
-    });
+    for (let e = 0; e < books.length; e +=1) {
+      listB.innerHTML += `  <li class="book-title">${books[e].bookTitle}</li>
+      <li class="book-author">${books[e].author}</li>
+      <button id="btn-remove" onclick="remove(${e})">Remove</button>`;
+    }
   }
 };
 
@@ -34,9 +36,11 @@ function addBook(e) {
   popHtml();
 }
 
-function remove() {
-  const ul = document.getElementById('book-list');
-  ul.parentNode.removeChild(ul);
+function remove(e) {
+  books.splice(e,1);
+  localStorage.setItem('Libros', JSON.stringify(books));
+  popHtml();
 }
+
 
 title.addEventListener('submit', addBook);
