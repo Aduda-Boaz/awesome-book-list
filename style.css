@@ -27,7 +27,20 @@
 }
 
 .text_input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
   text-align: center;
+  margin-top: 20px;
+  width: 90%;
+}
+
+.text_input input {
+  padding: 5px 8px;
+  margin-bottom: 10px;
+  color: rgb(243, 234, 234);
+  background-color: rgb(63, 54, 54);
+  border-radius: 5px;
 }
 
 .book {
