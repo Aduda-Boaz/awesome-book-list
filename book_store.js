@@ -43,7 +43,7 @@ class Library {
   bookRemove(e, j) {
     this.e = e;
     this.j = j;
-    books.splice(e,1);
+    books.splice(e, 1);
     localStorage.setItem('Libros', JSON.stringify(books));
     j.popHtml(books);
   }
