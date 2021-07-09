@@ -8,115 +8,74 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 /* eslint-disable no-unused-vars */
 
-/* eslint-disable linebreak-style */
+/* eslint-disable max-classes-per-file */
+var titles = document.getElementById('Title');
+var authors = document.getElementById('Author');
+var listB = document.getElementById('book-list');
+var button = document.getElementById('btn');
+var libros = document.getElementById('Libreria');
+var remove = document.getElementById('btn-remove');
+var books = [];
 
-/* eslint-disable no-use-before-define */
-
-/* eslint-disable no-plusplus */
-// eslint-disable-next-line max-classes-per-file
 var Book = function Book(title, author) {
   _classCallCheck(this, Book);
 
   this.title = title;
   this.author = author;
-}; // The UI class
+};
 
+if (localStorage.getItem('Libros') !== null) {
+  JSON.parse(localStorage.getItem('Libros')).forEach(function (element) {
+    books.push(element);
+  });
+} else {
+  books = [];
+}
 
-var User =
+var Library =
 /*#__PURE__*/
 function () {
-  function User() {
-    _classCallCheck(this, User);
+  function Library() {
+    _classCallCheck(this, Library);
   }
 
-  _createClass(User, null, [{
-    key: "addBooks",
-    value: function addBooks() {
-      var books = Storage.getBooks();
-      books.forEach(function (book) {
-        return User.addBookList(book);
-      });
-    }
-  }, {
-    key: "addBookList",
-    value: function addBookList(book) {
-      var list = document.querySelector('#book-list');
-      var div = document.createElement('div');
-      div.innerHTML = "\n      <h5>".concat(book.title, "</h5>\n      <h5>").concat(book.author, "</h5>\n      <button class=\"remove\">Remove</button>\n    ");
-      list.appendChild(div);
-    }
-  }, {
-    key: "removeBook",
-    value: function removeBook(target) {
-      if (target.classList.contains('remove')) {
-        target.parentElement.parentElement.remove();
+  _createClass(Library, [{
+    key: "popHtml",
+    value: function popHtml(books) {
+      this.books = books;
+      listB.innerHTML = '';
+
+      for (var e = 0; e < books.length; e += 1) {
+        listB.innerHTML += "  <li class=\"book-title\">".concat(books[e].title, "</li>\n      <li class=\"book-author\">").concat(books[e].author, "</li>\n      <button type=\"button\" id=\"btn-remove\" onclick=\"a.bookRemove(").concat(e, ", a)\">Remove</button>");
       }
     }
   }, {
-    key: "removeInputs",
-    value: function removeInputs() {
-      document.querySelector('#title').value = '';
-      document.querySelector('#author').value = '';
-    }
-  }]);
-
-  return User;
-}(); // Set the storage class
-
-
-var Storage =
-/*#__PURE__*/
-function () {
-  function Storage() {
-    _classCallCheck(this, Storage);
-  }
-
-  _createClass(Storage, null, [{
-    key: "getBooks",
-    value: function getBooks() {
-      var books;
-
-      if (localStorage.getItem('books') === null) {
-        books = [];
-      } else {
-        books = JSON.parse(localStorage.getItem('books'));
-      }
-
+    key: "bookUpdate",
+    value: function bookUpdate(x) {
+      this.x = x;
+      books.push(x);
+      localStorage.setItem('Libros', JSON.stringify(books));
       return books;
     }
   }, {
-    key: "storeBook",
-    value: function storeBook(book) {
-      var books = Storage.getBooks();
-      books.push(book);
-      localStorage.setItem('books', JSON.stringify(books));
-    }
-  }, {
-    key: "deleteBook",
-    value: function deleteBook(data) {
-      var books = Storage.getBooks();
-      books.forEach(function (book, index) {
-        if (book.data === data) {
-          book.splice(index, 1);
-        }
-      });
-      localStorage.setItem('books', JSON.stringify(books));
+    key: "bookRemove",
+    value: function bookRemove(e, j) {
+      this.e = e;
+      this.j = j;
+      books.splice(e, 1);
+      localStorage.setItem('Libros', JSON.stringify(books));
+      j.popHtml(books);
     }
   }]);
 
-  return Storage;
+  return Library;
 }();
 
-document.addEventListener('DOMContentLoaded', User.addBooks);
-document.querySelector('#form-input').addEventListener('submit', function (e) {
-  e.preventDefault();
-  var title = document.querySelector('#title').value;
-  var author = document.querySelector('#author').value;
-  var book = new Book(title, author);
-  User.addBookList(book);
-  Storage.storeBook(book);
-  User.removeInputs();
-});
-document.querySelector('#book-list').addEventListener('click', function (e) {
-  User.removeBook(e.target); // Remove book from localStorage after delete
+var a = new Library();
+a.popHtml(books);
+button.addEventListener('click', function () {
+  var bookList = new Book(titles.value, authors.value);
+  a.bookUpdate(bookList);
+  a.popHtml(books);
+  document.getElementById('Libreria').reset();
 });
