@@ -16,89 +16,107 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
       <div class="container-fluid">
-          <a class="navbar-brand" href="#" id="logo">Awesome Books</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse " id="navbarSupportedContent">
-              <ul class="navbar-nav ms-md-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#" id="navList">Addnew</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#" id="new">List</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#" id="contact">Contact</a>
-                  </li>
-              </ul>
-          </div>
+        <a class="navbar-brand" href="#" id="logo">Awesome Books</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-md-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navList"
+                >Addnew</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" id="new"
+                >List</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-  </nav>
-  <div class="text-end m-3 fs-6">
-    <p id="time">
-    </p>
-    <div id="list">
-      <h1 class="text-center">Awesome Books</h1>
-    </div>
-    <div id="formContainer">
-      <section
-        id="book-list"
-        class="list container text-center align-middle py-5"
-      ></section>
-    </div>
+    </nav>
+    <div class="text-end m-3 fs-6">
+      <p id="time"></p>
+      <div id="list">
+        <h1 class="text-center">Awesome Books</h1>
+      </div>
+      <div id="formContainer">
+        <section
+          id="book-list"
+          class="list container text-center align-middle py-5"
+        ></section>
+      </div>
 
-    <div class="text_input">
-      <div class="container">
-        <form class="Book-list" id="Libreria" method="POST">
-          <div>
-            <input
-              placeholder="Title"
-              type="text"
-              id="Title"
-              class="title"
-              minlength="2"
-              required
-            />
-          </div>
-          <div>
-            <input
-              placeholder="Author"
-              type="text"
-              id="Author"
-              class="author"
-              minlength="2"
-              required
-            />
-          </div>
-          <button id="btn" class="addBtn btn fs-6" type="submit">Add</button>
-        </form>
+      <div class="text_input">
+        <div class="container">
+          <form class="Book-list" id="Libreria" method="POST">
+            <div>
+              <input
+                placeholder="Title"
+                type="text"
+                id="Title"
+                class="title"
+                minlength="2"
+                required
+              />
+            </div>
+            <div>
+              <input
+                placeholder="Author"
+                type="text"
+                id="Author"
+                class="author"
+                minlength="2"
+                required
+              />
+            </div>
+            <button id="btn" class="addBtn btn fs-6" type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+      <div id="contactContainer">
+        <div class="card text-center">
+          <h3>Contact</h3>
+        </div>
+        <div class="card-body">
+          <p>Do you have any questions or you just want to say "Hello"?</p>
+          <p>You can reach out to us!</p>
+          <ul>
+            <li>
+              <p>Email: rr155914@gmail.com@gmail.com</p>
+            </li>
+            <li>
+              <p>Github: Richie9000@github.com</p>
+            </li>
+            <li>
+              <p>Twitter: @R1ck1987</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div id="contactContainer">
-      <div class="card text-center">
-          <div >
-              <h3>Contact</h3>
-          </div>
-          <div class="card-body">
-              <p>Do you have any questions or you just want to say "Hello"? </p>
-              <p>You can reach out to us!</p>
-              <ul>
-                  <li>
-                      <p>Email: rr155914@gmail.com@gmail.com</p>
-                  </li>
-                  <li>
-                      <p>Github: Richie9000@github.com</p>
-                  </li>
-                  <li>
-                      <p>Twitter: @R1ck1987</p>
-                  </li>
-              </ul>
-          </div>
-
-      </div>
     <script src="book_store.js"></script>
     <script src="luxon.js"></script>
   </body>

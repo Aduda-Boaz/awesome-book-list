@@ -16,7 +16,6 @@ const formContainer = document.getElementById('formContainer');
 const contactContainer = document.getElementById('contactContainer');
 const bookContainer = document.getElementById('list');
 
-
 let books = [];
 class Book {
   constructor(title, author) {
