@@ -1,5 +1,4 @@
-/* eslint no-use-before-define: 0 */ 
-
+ /* eslint-disable */ 
 const luxon = (function (exports) {
   function _defineProperties(target, props) {
     for (let i = 0; i < props.length; i++) {
