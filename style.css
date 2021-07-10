@@ -1,7 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.heading {
+  margin-top: 20px;
+  font-size: 35px;
+  color: crimson;
+  text-align: center;
+}
+
+.title,
+.author {
+  margin: 1vw;
+}
+
+.text_input {
+  text-align: center;
+}
+
 .book {
   border: black solid 1px;
 }
 
-.book-title {
-  margin: 1px;
+#contactContainer {
+  margin-top: 3vw;
+  padding-top: 3vw;
+}
+
+#btn-remove,
+.addBtn {
+  border: 1px solid gray;
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 1vw;
 }
