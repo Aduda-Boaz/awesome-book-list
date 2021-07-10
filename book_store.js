@@ -7,6 +7,15 @@ const listB = document.getElementById('book-list');
 const button = document.getElementById('btn');
 const libros = document.getElementById('Libreria');
 const remove = document.getElementById('btn-remove');
+
+const btnList = document.getElementById('navList');
+const btnNew = document.getElementById('new');
+const btnContact = document.getElementById('contact');
+const btnlogo = document.getElementById('logo');
+const formContainer = document.getElementById('formContainer');
+const contactContainer = document.getElementById('contactContainer');
+const bookContainer = document.getElementById('list');
+
 let books = [];
 class Book {
   constructor(title, author) {
@@ -61,4 +70,32 @@ button.addEventListener('click', () => {
   a.bookUpdate(bookList);
   a.popHtml(books);
   document.getElementById('Libreria').reset();
+});
+
+btnList.addEventListener('click', () => {
+  contactContainer.style.display = 'none';
+  formContainer.style.display = 'none';
+  libros.style.display = 'block';
+  bookContainer.style.display = 'none';
+});
+
+btnNew.addEventListener('click', () => {
+  contactContainer.style.display = 'none';
+  formContainer.style.display = 'block';
+  libros.style.display = 'none';
+  bookContainer.style.display = 'none';
+});
+
+btnContact.addEventListener('click', () => {
+  contactContainer.style.display = 'block';
+  formContainer.style.display = 'none';
+  libros.style.display = 'none';
+  bookContainer.style.display = 'block';
+});
+
+btnlogo.addEventListener('click', () => {
+  contactContainer.style.display = 'block';
+  formContainer.style.display = 'block';
+  libros.style.display = 'block';
+  bookContainer.style.display = 'block';
 });
