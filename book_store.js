@@ -27,9 +27,13 @@ class Library {
     this.books = books;
     listB.innerHTML = '';
     for (let e = 0; e < books.length; e += 1) {
-      listB.innerHTML += `  <li class="book-title">${books[e].title}</li>
-      <li class="book-author">${books[e].author}</li>
-      <button type="button" id="btn-remove" onclick="a.bookRemove(${e}, a)">Remove</button>`;
+      listB.innerHTML += ` 
+      <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action p-4 book-title">
+      <div class="ml-1">
+      <p class="fs-4 mt-3">"${books[e].title}" by ${books[e].author}</p>
+      </div>
+      <button type="button" id="btn-remove" onclick="a.bookRemove(${e}, a)">Remove</button>
+      </li>`;
     }
   }
 
